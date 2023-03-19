@@ -1,0 +1,135 @@
+<html>
+<head>
+<style>
+
+  margin-left: auto;
+  margin-right: auto;
+  
+.rangeslider {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.myslider {
+  -webkit-appearance: none;
+  background: #FCF3CF;
+  width: 1000px;
+  height: 20px;
+  opacity: 0.8;
+  margin-top: 500px;
+}
+
+.myslider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #34495E;
+  width: 3%;
+  height: 20px;
+}
+
+.myslider:hover {
+  opacity: 1;
+}
+
+.image {
+  text-position: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image>img {
+	height: 462;
+	width: 1000;
+
+  position: absolute;
+  display: none;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.image>img.visible,
+.image>img:first-child {
+  display: block;
+}
+
+.sliderOutput>div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 120px;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+}
+
+.sliderOutput h6,
+.sliderOutput p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+</style>
+</head>
+<body>
+
+<div class="image mt-3 mb-3" id="sliderImages">
+<img src="20230318_141547_070.jpg" /> 
+<img src="20230318_141547_071.jpg" /> 
+<img src="20230318_141547_072.jpg" /> 
+<img src="20230318_141547_073.jpg" /> 
+<img src="20230318_141547_074.jpg" /> 
+<img src="20230318_141547_075.jpg" /> 
+<img src="20230318_141547_076.jpg" /> 
+<img src="20230318_141547_077.jpg" /> 
+<img src="20230318_141547_078.jpg" /> 
+<img src="20230318_141547_079.jpg" /> 
+<img src="20230318_141547_080.jpg" /> 
+<img src="20230318_141547_081.jpg" /> 
+<img src="20230318_141547_082.jpg" /> 
+<img src="20230318_141547_083.jpg" /> 
+<img src="20230318_141547_084.jpg" /> 
+<img src="20230318_141547_085.jpg" /> 
+<img src="20230318_141547_086.jpg" /> 
+<img src="20230318_141547_087.jpg" /> 
+<img src="20230318_141547_088.jpg" /> 
+<img src="20230318_141547_089.jpg" /> 
+<img src="20230318_141547_090.jpg" /> 
+<img src="20230318_141547_091.jpg" /> 
+<img src="20230318_141547_092.jpg" /> 
+<img src="20230318_141547_093.jpg" /> 
+<img src="20230318_141547_094.jpg" /> 
+<img src="20230318_141547_095.jpg" /> 
+<img src="20230318_141547_096.jpg" /> 
+<img src="20230318_141547_097.jpg" /> 
+<img src="20230318_141547_098.jpg" /> 
+<img src="20230318_141547_099.jpg" /> 
+<img src="20230318_141547_100.jpg" /> 
+
+
+	</div>
+	<br>
+	
+	<div class="rangeslider">
+		<input type="range" min="1" max="31" value="1" class="myslider" id="sliderRange">
+		<div class="sliderOutput row mt-3"></div>
+	</div>
+	
+<script>
+window.addEventListener('load', function() {
+
+  var rangeslider = document.getElementById("sliderRange");
+
+  var images = document.getElementById("sliderImages");
+
+  rangeslider.addEventListener('input', function() {
+    for (var i = 0; i < images.children.length; i++) {
+      images.children[i].style.display = 'none';
+    }
+    i = Number(this.value) - 1;
+    images.children[i].style.display = 'block';
+  });
+
+});
+</script>
+</body>
+</html>
